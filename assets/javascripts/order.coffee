@@ -32,7 +32,11 @@ $ ->
 
 #    yaCounter22184293.reachGoal('new_order')
 
-    show_thank_you()
+
+    if $(@).hasClass 'inline-form'
+      show_thank_you_with_overlay()
+    else
+      show_thank_you()
 
     false
 
@@ -65,6 +69,17 @@ window.hide_order_form = ->
     $('.modal-dialog').hide()
     $('.modal-overlay').animate {'opacity': '0'}, 300, ->
       $('.modal-overlay').hide()
+  )
+
+window.show_thank_you_with_overlay = ->
+
+  $('.modal-overlay').show()
+  $('.modal-overlay').animate({'opacity': '0.8'}, 300, ->
+
+    $('.modal-thank-you').css('right', '-500px')
+    $('.modal-thank-you').css('top', '50%')
+    $('.modal-thank-you').show()
+    $('.modal-thank-you').animate {'right': '50%'}, 500
   )
 
 
