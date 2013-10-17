@@ -1,0 +1,20 @@
+.modal-overlay
+.modal-dialog
+  .modal-header
+    Оставьте заявку и мы с вами свяжемся
+  .body
+    %form{action: '#'}
+      %input{type: :text, name: :username, placeholder: 'Введите ваше имя'}
+      %input{type: :text, name: :phone, placeholder: 'Введите ваш телефон'}
+      %button.send-order
+        Отправить
+
+.modal-thank-you
+  .modal-header
+    Спасибо!
+  .body
+    Мы свяжемся с вами уже очень скоро.
+
+
+    %button#hide-thank-you
+      Я буду ждать!
