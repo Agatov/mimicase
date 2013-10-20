@@ -38,8 +38,7 @@ class Application < Sinatra::Base
     message = "#{params[:order][:username]}. #{params[:order][:phone]}"
 
     Pony.mail ({
-      #to: 'v.kozlofff@gmail.com',
-      to: 'abardacha@gmail.com',
+      to: 'v.kozlofff@gmail.com',
       subject: I18n.t('email.title', locale: 'ru'),
       body: message,
       via: :smtp,
@@ -52,22 +51,6 @@ class Application < Sinatra::Base
         authentication: :plain
       }
     })
-
-    #phones = %w(9037928959)
-
-    #phones.each do |phone|
-    #  HTTParty.get(
-    #      'http://api.sms24x7.ru',
-    #      query: {
-    #          method: 'push_msg',
-    #          email: 'agatovs@gmail.com',
-    #          password: 'avv6rqE',
-    #          phone: phone.to_s,
-    #          text: message,
-    #          sender_name: 'mimicase'
-    #      }
-    #  )
-    #end
 
     content_type :json
     {status: :success}.to_json
