@@ -46,8 +46,8 @@ class Application < Sinatra::Base
         address: 'smtp.gmail.com',
         port: 587,
         enable_starttls_auto: true,
-        user_name: 'abardacha',
-        password: 'fiolent149',
+        user_name: 'mimicase.notify',
+        password: 'mimicase',
         authentication: :plain
       }
     })
