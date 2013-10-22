@@ -29,9 +29,7 @@ $ ->
     $('.modal-overlay').bind 'click', ->
       hide_thank_you()
 
-
-#    yaCounter22184293.reachGoal('new_order')
-
+    reachGoal $(@).attr('goal')
 
     if $(@).hasClass 'inline-form'
       show_thank_you_with_overlay()
@@ -105,3 +103,6 @@ window.hide_thank_you = ->
       $('.modal-overlay').hide()
 
 
+
+window.reachGoal = (goal) ->
+  yaCounter22645732.reachGoal goal
