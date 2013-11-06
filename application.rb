@@ -13,6 +13,7 @@ I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'config', 'locales', '*.
 class Application < Sinatra::Base
   set :root, File.dirname(__FILE__)
   set :sass, { :load_paths => [ "#{Application.root}/assets/stylesheets" ] }
+  set :protection, :except => :frame_options
 
   register Sinatra::AssetPack
 
